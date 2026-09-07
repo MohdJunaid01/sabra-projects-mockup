@@ -1,0 +1,227 @@
+/* Sabra Projects Design System Tokens & Editorial Stylesheet */
+:root {
+  /* Warm Architectural Light Base Palette */
+  --bg-primary: #F5F3EF;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAF8F5;
+  --bg-card-active: #F0ECE4;
+
+  --sabra-red: #EC202B;
+  --sabra-red-hover: #D41A24;
+  --sabra-red-subtle: rgba(236, 32, 43, 0.08);
+  --sabra-red-border: rgba(236, 32, 43, 0.35);
+
+  --text-primary: #111111;
+  --text-secondary: #66615C;
+  --text-muted: #8E8A84;
+
+  --border-subtle: #EAE6DF;
+  --border-medium: #D8D4CE;
+  --border-active: #EC202B;
+
+  /* Dark Theater Mode Exception Tokens (Material Lab 3D Showroom) */
+  --theater-bg: #0B0B0A;
+  --theater-surface: #121211;
+  --theater-card: #171716;
+  --theater-card-hover: #1F1F1E;
+  --theater-text-primary: #FFFFFF;
+  --theater-text-secondary: #9E9C96;
+  --theater-text-muted: #666560;
+  --theater-border: rgba(255, 255, 255, 0.15);
+  --theater-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+  background-color: var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Typography styles */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.headline-large {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.headline-section {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.headline-sub {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.label-tech {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--sabra-red);
+  color: #FFFFFF;
+  border: 1px solid var(--sabra-red);
+  border-radius: var(--radius-xs);
+  padding: 0.9rem 1.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--sabra-red-hover);
+  border-color: var(--sabra-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(236, 32, 43, 0.2);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: 0.9rem 1.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(17, 17, 17, 0.04);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4C0B8;
+  border-radius: var(--radius-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9E9C96;
+}
+
+/* Interactive Hotspots in 3D Theater Mode */
+.hotspot-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.2s ease;
+}
+
+.hotspot-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--sabra-red);
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 14px rgba(236, 32, 43, 0.7);
+}
+
+.hotspot-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--sabra-red);
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* Subtle architectural grid pattern */
+.subtle-grid-light {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Accessibility focus rings */
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--sabra-red);
+  outline-offset: 2px;
+}
