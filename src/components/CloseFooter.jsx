@@ -27,7 +27,7 @@ export default function CloseFooter({ onBackToTop }) {
           }}>
             <span style={{ width: '6px', height: '6px', backgroundColor: '#EC202B' }} />
             <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.8rem' }}>
-              EXPLORE → ESTIMATE → CONSULT
+              SABRA PROJECTS · SYDNEY BESPOKE JOINERY
             </span>
             <span style={{ width: '6px', height: '6px', backgroundColor: '#EC202B' }} />
           </div>
@@ -53,7 +53,7 @@ export default function CloseFooter({ onBackToTop }) {
             lineHeight: 1.65,
             marginBottom: '36px'
           }}>
-            An interactive digital planning experience that helps clients explore design decisions, understand investment parameters and arrive at consultation better prepared.
+            An interactive digital planning experience for architectural joinery, custom cabinetry, and refined interior spaces.
           </p>
 
           {/* CTA: BACK TO TOP */}

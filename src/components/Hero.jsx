@@ -1,15 +1,15 @@
 import React from 'react';
 import { ArrowRight, Compass, ShieldCheck, Sparkles, ChevronDown } from 'lucide-react';
 
-export default function Hero({ onStartPlanning, onViewProjects }) {
+export default function Hero({ onStartPlanning }) {
   return (
     <section style={{
       position: 'relative',
-      minHeight: '92vh',
+      minHeight: '85vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '110px 40px 60px 40px',
+      padding: '110px 40px 80px 40px',
       backgroundColor: '#F5F3EF',
       borderBottom: '1px solid #D8D4CE',
       overflow: 'hidden'
@@ -21,13 +21,12 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
         position: 'relative',
         zIndex: 5
       }}>
-        {/* Two column layout on desktop: Editorial headline & CTAs on left, architectural hero photography on right */}
+        {/* Two column layout on desktop: Editorial headline & CTA on left, architectural hero photography on right */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)',
           gap: '48px',
-          alignItems: 'center',
-          marginBottom: '56px'
+          alignItems: 'center'
         }} className="hero-grid">
           <style>{`
             @media (max-width: 980px) {
@@ -82,10 +81,10 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
               marginBottom: '38px',
               letterSpacing: '0.01em'
             }}>
-              A smarter way to start your renovation. Explore materials, understand your investment, and arrive at your consultation with a clearer idea of what you want.
+              A smarter way to start your renovation. Explore architectural materials and finishes, configure your bespoke joinery in real-time 3D, and craft your space.
             </p>
 
-            {/* CTAs */}
+            {/* CTA */}
             <div style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -95,18 +94,10 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
               <button
                 onClick={onStartPlanning}
                 className="btn-primary"
-                style={{ padding: '16px 34px', fontSize: '0.84rem' }}
+                style={{ padding: '16px 36px', fontSize: '0.84rem' }}
               >
-                <span>START EXPLORING</span>
+                <span>EXPLORE MATERIALS</span>
                 <ArrowRight size={16} />
-              </button>
-
-              <button
-                onClick={onViewProjects}
-                className="btn-secondary"
-                style={{ padding: '16px 28px', fontSize: '0.84rem' }}
-              >
-                <span>VIEW PROJECTS</span>
               </button>
             </div>
           </div>
@@ -170,45 +161,6 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* 5-Stage Architectural Progression Strip */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
-          gap: '16px',
-          paddingTop: '28px',
-          borderTop: '1px solid #D8D4CE'
-        }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>01 / EXPLORE</span>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Project Typologies</span>
-            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Kitchens, new builds, butler's pantries & compact spaces</span>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>02 / MATERIALS</span>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>4 × 4 Material Library</span>
-            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Architectural timber, stone, laminate & veneer finishes</span>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>03 / DESIGN</span>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Cabinet Studio</span>
-            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Interactive 2D elevation & 3D joinery configurator</span>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>04 / INVESTMENT</span>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Indicative Estimate</span>
-            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Dynamic pricing range & itemised component breakdown</span>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>05 / CONSULT</span>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Qualified Brief</span>
-            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Carry your configuration directly into consultation</span>
           </div>
         </div>
       </div>

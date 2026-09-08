@@ -151,7 +151,7 @@ export default function MaterialCatalogue({
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
               <span style={{ width: '6px', height: '6px', backgroundColor: '#EC202B' }} />
               <span className="label-tech" style={{ color: '#EC202B' }}>
-                02 / MATERIAL LAB
+                01 / MATERIAL LIBRARY
               </span>
             </div>
 

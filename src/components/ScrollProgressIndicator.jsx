@@ -5,32 +5,16 @@ export default function ScrollProgressIndicator({ currentView, onNavigate }) {
 
   useEffect(() => {
     if (currentView === 'home') {
-      const handleScroll = () => {
-        const labElem = document.getElementById('material-lab');
-        const exploreElem = document.getElementById('explore');
-        const scrollY = window.scrollY + 300;
-
-        if (labElem && scrollY >= labElem.offsetTop) {
-          setActiveSection('02');
-        } else if (exploreElem && scrollY >= exploreElem.offsetTop) {
-          setActiveSection('01');
-        } else {
-          setActiveSection('01');
-        }
-      };
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
-      return () => window.removeEventListener('scroll', handleScroll);
+      setActiveSection('01');
     } else if (currentView === 'design') {
       const handleScroll = () => {
         const investmentElem = document.getElementById('investment-section');
         const scrollY = window.scrollY + 350;
 
         if (investmentElem && scrollY >= investmentElem.offsetTop) {
-          setActiveSection('04');
-        } else {
           setActiveSection('03');
+        } else {
+          setActiveSection('02');
         }
       };
 
@@ -38,18 +22,17 @@ export default function ScrollProgressIndicator({ currentView, onNavigate }) {
       handleScroll();
       return () => window.removeEventListener('scroll', handleScroll);
     } else if (currentView === 'estimator') {
-      setActiveSection('04');
+      setActiveSection('03');
     } else if (currentView === 'consultation') {
-      setActiveSection('05');
+      setActiveSection('04');
     }
   }, [currentView]);
 
   const stages = [
-    { num: '01', label: 'EXPLORE', view: 'home', target: 'explore' },
-    { num: '02', label: 'MATERIALS', view: 'home', target: 'material-lab' },
-    { num: '03', label: 'DESIGN', view: 'design', target: null },
-    { num: '04', label: 'INVESTMENT', view: 'design', target: 'investment-section' },
-    { num: '05', label: 'CONSULT', view: 'consultation', target: null }
+    { num: '01', label: 'MATERIALS', view: 'home', target: 'material-lab' },
+    { num: '02', label: 'DESIGN', view: 'design', target: null },
+    { num: '03', label: 'INVESTMENT', view: 'design', target: 'investment-section' },
+    { num: '04', label: 'CONSULT', view: 'consultation', target: null }
   ];
 
   return (

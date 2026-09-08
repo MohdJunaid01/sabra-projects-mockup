@@ -80,16 +80,6 @@ export default function App() {
     navigateToView('design');
   };
 
-  const handleSelectCategoryFromShowcase = (projectTypeId) => {
-    updateField('projectType', projectTypeId);
-    const labElem = document.getElementById('material-lab');
-    if (labElem) {
-      const navOffset = 76;
-      const pos = labElem.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({ top: pos - navOffset, behavior: 'smooth' });
-    }
-  };
-
   return (
     <div style={{
       minHeight: '100vh',
@@ -120,7 +110,7 @@ export default function App() {
 
       {/* Main Experience Flow based on current dedicated view */}
       <main style={{ paddingTop: '76px' }} key={currentView} className="page-enter-animation">
-        {/* VIEW 1: HOME (EXPLORE + 4x4 MATERIAL CATALOGUE) */}
+        {/* VIEW 1: HOME (HERO + 4x4 MATERIAL CATALOGUE) */}
         {currentView === 'home' && (
           <div>
             {/* HERO */}
@@ -134,21 +124,10 @@ export default function App() {
                     window.scrollTo({ top: pos - navOffset, behavior: 'smooth' });
                   }
                 }}
-                onViewProjects={() => {
-                  const elem = document.getElementById('explore');
-                  if (elem) {
-                    const navOffset = 76;
-                    const pos = elem.getBoundingClientRect().top + window.pageYOffset;
-                    window.scrollTo({ top: pos - navOffset, behavior: 'smooth' });
-                  }
-                }}
               />
             </div>
 
-            {/* 01 / EXPLORE: Project & Category Showcase */}
-            <ProjectShowcase onSelectCategory={handleSelectCategoryFromShowcase} />
-
-            {/* 02 / MATERIAL LAB: 4 × 4 Architectural Material Library */}
+            {/* 01 / MATERIAL LIBRARY: 4 × 4 Architectural Material Library */}
             <MaterialCatalogue
               selectedMaterialId={plannerState.cabinetFinish}
               onSelectAndOpenDesign={handleSelectMaterialAndOpenDesign}
