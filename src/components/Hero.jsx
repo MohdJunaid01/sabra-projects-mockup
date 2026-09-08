@@ -95,16 +95,16 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
               <button
                 onClick={onStartPlanning}
                 className="btn-primary"
-                style={{ padding: '15px 32px', fontSize: '0.84rem' }}
+                style={{ padding: '16px 34px', fontSize: '0.84rem' }}
               >
-                <span>START PLANNING</span>
+                <span>START EXPLORING</span>
                 <ArrowRight size={16} />
               </button>
 
               <button
                 onClick={onViewProjects}
                 className="btn-secondary"
-                style={{ padding: '15px 28px', fontSize: '0.84rem' }}
+                style={{ padding: '16px 28px', fontSize: '0.84rem' }}
               >
                 <span>VIEW PROJECTS</span>
               </button>
@@ -173,36 +173,42 @@ export default function Hero({ onStartPlanning, onViewProjects }) {
           </div>
         </div>
 
-        {/* 4-Stage Architectural Progression Strip */}
+        {/* 5-Stage Architectural Progression Strip */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '20px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+          gap: '16px',
           paddingTop: '28px',
           borderTop: '1px solid #D8D4CE'
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>STAGE 01 / EXPLORE</span>
-            <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111111' }}>Project Categories</span>
-            <span style={{ fontSize: '0.78rem', color: '#66615C' }}>Kitchens, new builds, butler's pantries & compact spaces</span>
+            <span className="label-tech" style={{ color: '#EC202B' }}>01 / EXPLORE</span>
+            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Project Typologies</span>
+            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Kitchens, new builds, butler's pantries & compact spaces</span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>STAGE 02 / DESIGN</span>
-            <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111111' }}>3D Material Lab</span>
-            <span style={{ fontSize: '0.78rem', color: '#66615C' }}>Enter dark showroom theater to test real finishes</span>
+            <span className="label-tech" style={{ color: '#EC202B' }}>02 / MATERIALS</span>
+            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>4 × 4 Material Library</span>
+            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Architectural timber, stone, laminate & veneer finishes</span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>STAGE 03 / ESTIMATE</span>
-            <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111111' }}>Indicative Investment</span>
-            <span style={{ fontSize: '0.78rem', color: '#66615C' }}>Transparent AUD range based on your exact specifications</span>
+            <span className="label-tech" style={{ color: '#EC202B' }}>03 / DESIGN</span>
+            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Cabinet Studio</span>
+            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Interactive 2D elevation & 3D joinery configurator</span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span className="label-tech" style={{ color: '#EC202B' }}>STAGE 04 / CONSULT</span>
-            <span style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111111' }}>Qualified Brief</span>
-            <span style={{ fontSize: '0.78rem', color: '#66615C' }}>Arrive with pre-aligned specifications and timeline</span>
+            <span className="label-tech" style={{ color: '#EC202B' }}>04 / INVESTMENT</span>
+            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Indicative Estimate</span>
+            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Dynamic pricing range & itemised component breakdown</span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span className="label-tech" style={{ color: '#EC202B' }}>05 / CONSULT</span>
+            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#111111' }}>Qualified Brief</span>
+            <span style={{ fontSize: '0.74rem', color: '#66615C' }}>Carry your configuration directly into consultation</span>
           </div>
         </div>
       </div>

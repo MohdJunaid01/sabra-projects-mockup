@@ -7,6 +7,9 @@ import CabinetDesignPage from './components/CabinetDesignPage';
 import EstimatorFlow from './components/BudgetEstimator/EstimatorFlow';
 import ConsultationFlow from './components/Consultation/ConsultationFlow';
 import CloseFooter from './components/CloseFooter';
+import Preloader from './components/Preloader';
+import CustomCursor from './components/CustomCursor';
+import ScrollProgressIndicator from './components/ScrollProgressIndicator';
 
 const INITIAL_STATE = {
   // Material Type & Finish from Material Library
@@ -34,6 +37,7 @@ export default function App() {
   const [plannerState, setPlannerState] = useState(INITIAL_STATE);
   // View options: 'home' | 'design' | 'estimator' | 'consultation'
   const [currentView, setCurrentView] = useState('home');
+  const [preloaderComplete, setPreloaderComplete] = useState(false);
 
   const updateField = (field, value) => {
     setPlannerState(prev => ({
@@ -90,9 +94,24 @@ export default function App() {
     <div style={{
       minHeight: '100vh',
       backgroundColor: '#F5F3EF',
-      color: '#111111'
+      color: '#111111',
+      position: 'relative'
     }}>
-      {/* 1. Fixed Architectural Light Header */}
+      {/* 0. Initial Editorial Preloader */}
+      {!preloaderComplete && (
+        <Preloader onComplete={() => setPreloaderComplete(true)} />
+      )}
+
+      {/* 1. Subtle Custom Architectural Cursor (Desktop only) */}
+      <CustomCursor />
+
+      {/* 2. Floating Stage / Scroll Progress Indicator (Right Sidebar) */}
+      <ScrollProgressIndicator
+        currentView={currentView}
+        onNavigate={navigateToView}
+      />
+
+      {/* 3. Fixed Architectural Light Header */}
       <Navigation
         currentView={currentView}
         onNavigate={navigateToView}
@@ -100,7 +119,7 @@ export default function App() {
       />
 
       {/* Main Experience Flow based on current dedicated view */}
-      <main style={{ paddingTop: '76px' }}>
+      <main style={{ paddingTop: '76px' }} key={currentView} className="page-enter-animation">
         {/* VIEW 1: HOME (EXPLORE + 4x4 MATERIAL CATALOGUE) */}
         {currentView === 'home' && (
           <div>

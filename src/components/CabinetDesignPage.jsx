@@ -1159,7 +1159,7 @@ export default function CabinetDesignPage({
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
-                    CABINET STYLE
+                    01 / CABINET STYLE
                   </span>
                   <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentStyle.name}
@@ -1212,7 +1212,7 @@ export default function CabinetDesignPage({
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
-                    LAYOUT
+                    02 / LAYOUT
                   </span>
                   <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentLayout.name}
@@ -1265,7 +1265,7 @@ export default function CabinetDesignPage({
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
-                    HARDWARE
+                    03 / HARDWARE
                   </span>
                   <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentHardware.name}
@@ -1325,7 +1325,7 @@ export default function CabinetDesignPage({
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
-                    BENCHTOP
+                    04 / BENCHTOP
                   </span>
                   <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentBenchtop.name}
@@ -1492,11 +1492,11 @@ export default function CabinetDesignPage({
         {/* =========================================================================
             14, 15, 24, 25 — 04 / INVESTMENT: DYNAMIC ESTIMATE & ITEMISED BREAKDOWN
            ========================================================================= */}
-        <div style={{
+        <div id="investment-section" style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid #D8D4CE',
           borderRadius: '2px',
-          padding: '36px 44px',
+          padding: '40px 48px',
           boxShadow: '0 2px 12px rgba(0, 0, 0, 0.02)',
           marginBottom: '32px'
         }}>
@@ -1519,14 +1519,14 @@ export default function CabinetDesignPage({
             <div>
               <h2 style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.9rem',
+                fontSize: '2.4rem',
                 fontWeight: 400,
                 color: '#111111',
                 marginBottom: '6px'
               }}>
-                INDICATIVE ESTIMATE
+                INDICATIVE INVESTMENT
               </h2>
-              <p style={{ color: '#66615C', fontSize: '0.95rem', maxWidth: '560px', lineHeight: 1.6 }}>
+              <p style={{ color: '#66615C', fontSize: '0.96rem', maxWidth: '560px', lineHeight: 1.6 }}>
                 Your selections shape the scope and investment of the project.
               </p>
             </div>
@@ -1544,7 +1544,7 @@ export default function CabinetDesignPage({
               </span>
               <div style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '2.2rem',
+                fontSize: '2.3rem',
                 fontWeight: 600,
                 color: '#111111',
                 letterSpacing: '-0.02em',
@@ -1566,7 +1566,7 @@ export default function CabinetDesignPage({
             </div>
           </div>
 
-          {/* Quick Scope & Feature Adjusters (Provides instant responsiveness for size, finish level, and features) */}
+          {/* Quick Scope & Feature Adjusters */}
           <div style={{
             backgroundColor: '#F5F3EF',
             border: '1px solid #EAE6DF',
@@ -1695,7 +1695,7 @@ export default function CabinetDesignPage({
                 background: 'none',
                 border: '1px solid #111111',
                 color: '#111111',
-                padding: '9px 18px',
+                padding: '10px 20px',
                 fontSize: '0.75rem',
                 fontWeight: 600,
                 letterSpacing: '0.06em',
@@ -1719,44 +1719,57 @@ export default function CabinetDesignPage({
             </button>
           </div>
 
-          {/* Compact Breakdown List */}
+          {/* Elegant Typographic Schedule Breakdown (Point 22) */}
           {showBreakdown && (
             <div style={{
-              marginTop: '20px',
+              marginTop: '24px',
               paddingTop: '20px',
-              borderTop: '1px solid #EAE6DF'
+              borderTop: '1px solid #D8D4CE',
+              animation: 'fadeIn 0.35s ease'
             }}>
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '12px',
-                marginBottom: '18px'
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingBottom: '10px',
+                borderBottom: '1px solid #111111',
+                fontSize: '0.66rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#8E8A84'
               }}>
+                <span>COMPONENT / SCOPE ITEM</span>
+                <span>INVESTMENT ALLOCATION</span>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {estimate.breakdown.map((item, idx) => (
                   <div
                     key={idx}
                     style={{
-                      backgroundColor: '#F5F3EF',
-                      border: '1px solid #EAE6DF',
-                      borderRadius: '2px',
-                      padding: '12px 16px',
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      padding: '14px 0',
+                      borderBottom: '1px solid #EAE6DF'
                     }}
                   >
                     <div>
-                      <span style={{ fontSize: '0.64rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block' }}>
+                      <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#111111', display: 'block' }}>
                         {item.label}
                       </span>
-                      <strong style={{ fontSize: '0.84rem', color: '#111111' }}>
-                        {item.detail || item.label}
-                      </strong>
+                      {item.detail && item.detail !== item.label && (
+                        <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+                          {item.detail}
+                        </span>
+                      )}
                     </div>
                     <div style={{
-                      fontSize: '0.88rem',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '0.94rem',
                       fontWeight: 700,
-                      color: item.isBase ? '#111111' : '#EC202B'
+                      color: item.isBase ? '#111111' : '#EC202B',
+                      letterSpacing: '0.02em'
                     }}>
                       {item.formatted}
                     </div>
@@ -1768,30 +1781,39 @@ export default function CabinetDesignPage({
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                padding: '12px 18px',
-                backgroundColor: '#111111',
-                color: '#FFFFFF',
-                borderRadius: '2px'
+                padding: '16px 0',
+                borderTop: '2px solid #111111',
+                marginTop: '12px'
               }}>
-                <span style={{ fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  DETERMINISTIC MIDPOINT BENCHMARK
-                </span>
-                <span style={{ fontSize: '1rem', fontWeight: 700 }}>
+                <div>
+                  <span style={{ fontSize: '0.76rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#111111' }}>
+                    DETERMINISTIC MIDPOINT BENCHMARK
+                  </span>
+                  <span style={{ fontSize: '0.7rem', color: '#8E8A84', display: 'block' }}>
+                    Standard installation & architectural delivery scope
+                  </span>
+                </div>
+                <div style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '1.45rem',
+                  fontWeight: 600,
+                  color: '#111111'
+                }}>
                   ${estimate.midpoint.toLocaleString()} AUD
-                </span>
+                </div>
               </div>
             </div>
           )}
         </div>
 
         {/* =========================================================================
-            27 — CONSULTATION CTA: CARRY FORWARD ACTIVE CONFIGURATION
+            24, 25 — CONSULTATION CTA: CARRY FORWARD ACTIVE CONFIGURATION
            ========================================================================= */}
-        <div style={{
+        <div id="consultation-cta" style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid #D8D4CE',
           borderRadius: '2px',
-          padding: '36px 44px',
+          padding: '44px 48px',
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
@@ -1800,32 +1822,36 @@ export default function CabinetDesignPage({
           boxShadow: '0 4px 24px rgba(0, 0, 0, 0.02)'
         }}>
           <div>
-            <div className="label-tech" style={{ color: '#EC202B', marginBottom: '6px' }}>
-              READY TO DISCUSS YOUR PROJECT?
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+              <span style={{ width: '6px', height: '6px', backgroundColor: '#EC202B', borderRadius: '50%' }} />
+              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.66rem' }}>
+                05 / CONSULT
+              </span>
             </div>
             <h3 style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '1.75rem',
+              fontSize: '2.4rem',
               fontWeight: 400,
               color: '#111111',
-              marginBottom: '6px'
+              marginBottom: '10px',
+              lineHeight: 1.15
             }}>
-              YOUR CABINET CONFIGURATION IS READY.
+              READY TO DISCUSS<br />YOUR PROJECT?
             </h3>
             <p style={{
               color: '#66615C',
-              fontSize: '0.95rem',
+              fontSize: '1.02rem',
               maxWidth: '620px',
               lineHeight: 1.6
             }}>
-              Your material selections, joinery style, layout, hardware, and benchtop have been compiled into your active project brief.
+              Take your configuration into a consultation with Sabra Projects.
             </p>
           </div>
 
           <button
             onClick={onProceedToConsultation || onProceedToEstimator}
             className="btn-primary"
-            style={{ padding: '15px 32px', fontSize: '0.84rem' }}
+            style={{ padding: '16px 36px', fontSize: '0.86rem' }}
           >
             <span>DISCUSS MY PROJECT</span>
             <ArrowRight size={16} />

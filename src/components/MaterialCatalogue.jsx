@@ -119,8 +119,16 @@ export default function MaterialCatalogue({
   onSelectAndOpenDesign
 }) {
   const [hoveredId, setHoveredId] = useState(null);
+  const [activatingId, setActivatingId] = useState(null);
 
   const selectedTimber = TIMBER_MATERIALS.find(t => t.id === selectedMaterialId) || TIMBER_MATERIALS[0];
+
+  const handleCardClick = (timberId) => {
+    setActivatingId(timberId);
+    setTimeout(() => {
+      onSelectAndOpenDesign(timberId);
+    }, 380);
+  };
 
   return (
     <section id="material-lab" style={{
@@ -187,26 +195,27 @@ export default function MaterialCatalogue({
           {TIMBER_MATERIALS.map((timber) => {
             const isSelected = selectedMaterialId === timber.id;
             const isHovered = hoveredId === timber.id;
+            const isActivating = activatingId === timber.id;
 
             return (
               <div
                 key={timber.id}
-                onClick={() => onSelectAndOpenDesign(timber.id)}
+                onClick={() => handleCardClick(timber.id)}
                 onMouseEnter={() => setHoveredId(timber.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 style={{
-                  backgroundColor: isSelected ? 'rgba(236, 32, 43, 0.03)' : '#FFFFFF',
+                  backgroundColor: isSelected || isActivating ? 'rgba(236, 32, 43, 0.03)' : '#FFFFFF',
                   border: '1px solid',
-                  borderColor: isSelected ? '#EC202B' : (isHovered ? '#111111' : '#D8D4CE'),
+                  borderColor: isActivating || isSelected ? '#EC202B' : (isHovered ? '#111111' : '#D8D4CE'),
                   borderRadius: '2px',
                   padding: '12px',
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
-                  transition: 'all 0.22s ease',
+                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                   position: 'relative',
-                  transform: isHovered ? 'translateY(-2px)' : 'none',
-                  boxShadow: isHovered ? '0 8px 24px rgba(0, 0, 0, 0.05)' : '0 1px 3px rgba(0, 0, 0, 0.02)'
+                  transform: isActivating ? 'scale(0.985)' : (isHovered ? 'translateY(-2px)' : 'none'),
+                  boxShadow: isHovered ? '0 8px 24px rgba(0, 0, 0, 0.06)' : '0 1px 3px rgba(0, 0, 0, 0.02)'
                 }}
               >
                 {/* Visual Swatch */}
@@ -223,7 +232,7 @@ export default function MaterialCatalogue({
                       marginBottom: '4px'
                     }}>
                       <span className="label-tech" style={{
-                        color: isSelected ? '#EC202B' : '#8E8A84',
+                        color: isSelected || isActivating ? '#EC202B' : '#8E8A84',
                         fontSize: '0.64rem',
                         transition: 'color 0.2s ease'
                       }}>
@@ -272,11 +281,19 @@ export default function MaterialCatalogue({
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     fontSize: '0.68rem',
-                    color: isSelected ? '#EC202B' : '#8E8A84',
+                    color: isSelected || isActivating ? '#EC202B' : '#8E8A84',
                     fontWeight: 600
                   }}>
-                    <span>{isSelected ? 'SELECTED · OPEN DESIGN' : 'CLICK TO DESIGN'}</span>
-                    <span style={{ color: '#111111', fontWeight: 600 }}>→</span>
+                    <span>{isActivating ? 'OPENING DESIGN STUDIO...' : (isSelected ? 'SELECTED · OPEN DESIGN' : 'CLICK TO DESIGN')}</span>
+                    <span style={{
+                      color: isSelected || isHovered ? '#EC202B' : '#111111',
+                      fontWeight: 700,
+                      display: 'inline-block',
+                      transform: isHovered ? 'translateX(3px)' : 'none',
+                      transition: 'transform 0.2s ease'
+                    }}>
+                      →
+                    </span>
                   </div>
                 </div>
               </div>

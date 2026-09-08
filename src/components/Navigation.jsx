@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, RotateCcw } from 'lucide-react';
 
 export default function Navigation({
@@ -6,6 +6,17 @@ export default function Navigation({
   onNavigate,
   onReset
 }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navLinks = [
     { label: 'Materials', target: 'material-lab', view: 'home' },
     { label: 'Cabinet Designer', target: 'design', view: 'design' }
@@ -17,15 +28,19 @@ export default function Navigation({
       top: 0,
       left: 0,
       right: 0,
-      height: '76px',
-      backgroundColor: '#FFFFFF',
-      borderBottom: '1px solid #D8D4CE',
+      height: scrolled ? '70px' : '76px',
+      backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.94)' : '#FFFFFF',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      borderBottom: '1px solid',
+      borderColor: scrolled ? '#D8D4CE' : 'rgba(216, 212, 206, 0.7)',
       zIndex: 100,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '0 40px',
-      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.02)'
+      boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.04)' : '0 1px 3px rgba(0, 0, 0, 0.01)',
+      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
     }}>
       {/* Left: Official Sabra Projects Logo & Brand Wordmark */}
       <div
