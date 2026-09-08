@@ -173,8 +173,8 @@ export default function Interactive3DCabinet({
     const camera = new THREE.PerspectiveCamera(34, width / heightPx, 0.1, 100);
 
     // Spherical Coordinates for Custom Orbit (No OrbitControls import)
-    let radius = 4.8;
-    let targetRadius = 4.8;
+    let radius = 5.1;
+    let targetRadius = 5.1;
     let theta = 0.65; // ~37 deg horizontal yaw for ideal 3/4 perspective
     let targetTheta = 0.65;
     let phi = 1.25;   // ~71 deg vertical pitch
@@ -193,7 +193,7 @@ export default function Interactive3DCabinet({
     resetCameraRef.current = () => {
       targetTheta = 0.65;
       targetPhi = 1.25;
-      targetRadius = 4.8;
+      targetRadius = 5.1;
     };
 
     // 3. RENDERER with soft shadows on pure white

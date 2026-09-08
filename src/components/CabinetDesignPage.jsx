@@ -441,7 +441,7 @@ export function CabinetElevationRender({
 function ComponentVisualDiagram({ type, id, isSelected }) {
   if (type === 'style') {
     return (
-      <svg width="36" height="36" viewBox="0 0 36 36" style={{ display: 'block', flexShrink: 0 }}>
+      <svg width="28" height="28" viewBox="0 0 36 36" style={{ display: 'block', flexShrink: 0 }}>
         <rect x="2" y="2" width="32" height="32" fill="#F5F3EF" stroke={isSelected ? '#EC202B' : '#D8D4CE'} strokeWidth="1" />
         {id === 'flat-panel' && (
           <line x1="18" y1="2" x2="18" y2="34" stroke="#8E8A84" strokeWidth="1" />
@@ -466,7 +466,7 @@ function ComponentVisualDiagram({ type, id, isSelected }) {
 
   if (type === 'layout') {
     return (
-      <svg width="36" height="36" viewBox="0 0 36 36" style={{ display: 'block', flexShrink: 0 }}>
+      <svg width="28" height="28" viewBox="0 0 36 36" style={{ display: 'block', flexShrink: 0 }}>
         <rect x="2" y="2" width="32" height="32" fill="#F5F3EF" stroke={isSelected ? '#EC202B' : '#D8D4CE'} strokeWidth="1" />
         {id === '2-door' && (
           <line x1="18" y1="2" x2="18" y2="34" stroke={isSelected ? '#EC202B' : '#8E8A84'} strokeWidth="1.2" />
@@ -607,17 +607,17 @@ export default function CabinetDesignPage({
     <div style={{
       backgroundColor: '#F5F3EF',
       minHeight: '100vh',
-      padding: '36px 32px 80px 32px'
+      padding: '24px 28px 60px 28px'
     }}>
-      <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1380px', margin: '0 auto' }}>
         {/* 10 — TOP HEADER & BREADCRUMB */}
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
           alignItems: 'center',
-          marginBottom: '28px',
-          gap: '20px'
+          marginBottom: '20px',
+          gap: '16px'
         }}>
           <button
             onClick={onBackToMaterials}
@@ -629,16 +629,16 @@ export default function CabinetDesignPage({
               alignItems: 'center',
               gap: '8px',
               cursor: 'pointer',
-              fontSize: '0.8rem',
+              fontSize: '0.76rem',
               fontWeight: 600,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              padding: '6px 0'
+              padding: '4px 0'
             }}
             onMouseEnter={(e) => e.currentTarget.style.color = '#EC202B'}
             onMouseLeave={(e) => e.currentTarget.style.color = '#66615C'}
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={15} />
             <span>← BACK TO MATERIALS</span>
           </button>
 
@@ -656,16 +656,16 @@ export default function CabinetDesignPage({
           flexWrap: 'wrap',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
-          marginBottom: '32px',
-          paddingBottom: '24px',
+          marginBottom: '22px',
+          paddingBottom: '16px',
           borderBottom: '1px solid #D8D4CE',
-          gap: '24px'
+          gap: '18px'
         }}>
           <div>
-            <h1 className="headline-section" style={{ color: '#111111', marginBottom: '8px' }}>
+            <h1 className="headline-section" style={{ color: '#111111', fontSize: '1.85rem', marginBottom: '6px' }}>
               DESIGN YOUR CABINET.
             </h1>
-            <p style={{ color: '#66615C', fontSize: '1rem', maxWidth: '640px', lineHeight: 1.6 }}>
+            <p style={{ color: '#66615C', fontSize: '0.9rem', maxWidth: '580px', lineHeight: 1.5 }}>
               The left panel controls your material finish. The right panel customizes joinery components. The center canvas presents your live 3D cabinet on a pure white studio stage.
             </p>
           </div>
@@ -675,15 +675,15 @@ export default function CabinetDesignPage({
             backgroundColor: '#FFFFFF',
             border: '1px solid #D8D4CE',
             borderRadius: '2px',
-            padding: '14px 20px',
+            padding: '10px 16px',
             display: 'flex',
             alignItems: 'center',
-            gap: '16px',
+            gap: '14px',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)'
           }}>
             <div style={{
-              width: '42px',
-              height: '42px',
+              width: '36px',
+              height: '36px',
               backgroundColor: selectedMaterial.baseColor,
               borderRadius: '2px',
               border: '1px solid #D8D4CE',
@@ -692,13 +692,13 @@ export default function CabinetDesignPage({
             }} />
 
             <div>
-              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block' }}>
+              <span style={{ fontSize: '0.6rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block' }}>
                 SELECTED MATERIAL · {selectedMaterial.code || 'FINISH'}
               </span>
-              <strong style={{ color: '#111111', fontSize: '1.02rem', display: 'block' }}>
+              <strong style={{ color: '#111111', fontSize: '0.94rem', display: 'block' }}>
                 {selectedMaterial.name}
               </strong>
-              <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.66rem', color: '#EC202B', fontWeight: 600 }}>
                 You can change the material from the panel on the left.
               </span>
             </div>
@@ -708,19 +708,19 @@ export default function CabinetDesignPage({
         {/* 02 — NEW THREE-COLUMN CONFIGURATION INTERFACE */}
         <div className="designer-three-column-grid" style={{
           display: 'grid',
-          gridTemplateColumns: '300px minmax(440px, 1.35fr) 400px',
-          gap: '22px',
+          gridTemplateColumns: '260px minmax(0, 1.35fr) 350px',
+          gap: '16px',
           alignItems: 'start',
-          marginBottom: '44px'
+          marginBottom: '32px'
         }}>
           <style>{`
-            @media (max-width: 1400px) {
+            @media (max-width: 1200px) {
               .designer-three-column-grid {
-                grid-template-columns: 280px minmax(360px, 1.2fr) 380px !important;
-                gap: 16px !important;
+                grid-template-columns: 240px minmax(0, 1.2fr) 320px !important;
+                gap: 12px !important;
               }
             }
-            @media (max-width: 1120px) {
+            @media (max-width: 992px) {
               .designer-three-column-grid {
                 grid-template-columns: 1fr !important;
               }
@@ -731,7 +731,7 @@ export default function CabinetDesignPage({
                 min-height: auto !important;
               }
               .designer-scroll-area {
-                max-height: 480px !important;
+                max-height: 420px !important;
               }
             }
           `}</style>
@@ -743,20 +743,20 @@ export default function CabinetDesignPage({
             backgroundColor: '#FFFFFF',
             border: '1px solid #D8D4CE',
             borderRadius: '2px',
-            padding: '24px 20px',
+            padding: '16px 14px',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)',
             display: 'flex',
             flexDirection: 'column',
-            height: '660px'
+            height: '530px'
           }}>
             {/* Panel Heading */}
-            <div style={{ paddingBottom: '12px', borderBottom: '1px solid #EAE6DF', marginBottom: '14px' }}>
-              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.64rem' }}>
+            <div style={{ paddingBottom: '10px', borderBottom: '1px solid #EAE6DF', marginBottom: '12px' }}>
+              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.62rem' }}>
                 SELECT YOUR MATERIAL
               </span>
               <h2 style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.4rem',
+                fontSize: '1.25rem',
                 fontWeight: 600,
                 color: '#111111',
                 marginTop: '2px'
@@ -833,7 +833,7 @@ export default function CabinetDesignPage({
               paddingRight: '6px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '8px'
+              gap: '6px'
             }}>
               {materialsInCategory.map(mat => {
                 const isSelected = plannerState.cabinetFinish === mat.id;
@@ -846,11 +846,11 @@ export default function CabinetDesignPage({
                       border: '1px solid',
                       borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                       borderRadius: '2px',
-                      padding: '10px 12px',
+                      padding: '7px 10px',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '12px',
+                      gap: '10px',
                       transition: 'all 0.15s ease'
                     }}
                     onMouseEnter={(e) => {
@@ -862,8 +862,8 @@ export default function CabinetDesignPage({
                   >
                     {/* Small Visual Material Swatch */}
                     <div style={{
-                      width: '32px',
-                      height: '32px',
+                      width: '24px',
+                      height: '24px',
                       backgroundColor: mat.baseColor,
                       borderRadius: '2px',
                       border: '1px solid #D8D4CE',
@@ -874,7 +874,7 @@ export default function CabinetDesignPage({
                     {/* Name & Code */}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{
-                        fontSize: '0.82rem',
+                        fontSize: '0.76rem',
                         fontWeight: 600,
                         color: isSelected ? '#EC202B' : '#111111',
                         whiteSpace: 'nowrap',
@@ -884,7 +884,7 @@ export default function CabinetDesignPage({
                         {mat.name}
                       </div>
                       <span style={{
-                        fontSize: '0.64rem',
+                        fontSize: '0.58rem',
                         color: '#8E8A84',
                         display: 'block',
                         textTransform: 'uppercase',
@@ -897,8 +897,8 @@ export default function CabinetDesignPage({
                     {/* Sabra Red Checkmark Indicator */}
                     {isSelected && (
                       <div style={{
-                        width: '18px',
-                        height: '18px',
+                        width: '16px',
+                        height: '16px',
                         backgroundColor: '#EC202B',
                         borderRadius: '50%',
                         display: 'flex',
@@ -906,7 +906,7 @@ export default function CabinetDesignPage({
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <Check size={11} color="#FFFFFF" strokeWidth={3} />
+                        <Check size={10} color="#FFFFFF" strokeWidth={3} />
                       </div>
                     )}
                   </div>
@@ -922,32 +922,32 @@ export default function CabinetDesignPage({
             backgroundColor: '#FFFFFF',
             border: '1px solid #D8D4CE',
             borderRadius: '2px',
-            padding: '24px 20px 18px 20px',
+            padding: '14px 16px 10px 16px',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            height: '660px'
+            height: '530px'
           }}>
             {/* Viewport Top Header Bar */}
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginBottom: '14px',
-              paddingBottom: '12px',
+              marginBottom: '10px',
+              paddingBottom: '8px',
               borderBottom: '1px solid #EAE6DF',
               gap: '12px'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '6px', height: '6px', backgroundColor: '#EC202B', borderRadius: '50%' }} />
-                <span className="label-tech" style={{ color: '#111111', fontSize: '0.66rem' }}>
+                <span className="label-tech" style={{ color: '#111111', fontSize: '0.64rem' }}>
                   {viewMode === '3D' ? 'INTERACTIVE 3D CABINET' : 'ARCHITECTURAL 2D ELEVATION'} · PURE WHITE STUDIO CANVAS
                 </span>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                <div style={{ fontSize: '0.72rem', color: '#66615C', letterSpacing: '0.04em' }}>
+                <div style={{ fontSize: '0.7rem', color: '#66615C', letterSpacing: '0.04em' }}>
                   <strong style={{ color: '#111111' }}>{selectedMaterial.name}</strong> · {currentStyle.name} · {currentLayout.name}
                 </div>
 
@@ -967,8 +967,8 @@ export default function CabinetDesignPage({
                       backgroundColor: viewMode === '2D' ? '#111111' : 'transparent',
                       color: viewMode === '2D' ? '#FFFFFF' : '#66615C',
                       border: 'none',
-                      padding: '4px 10px',
-                      fontSize: '0.68rem',
+                      padding: '3px 8px',
+                      fontSize: '0.64rem',
                       fontWeight: 700,
                       letterSpacing: '0.08em',
                       cursor: 'pointer',
@@ -984,8 +984,8 @@ export default function CabinetDesignPage({
                       backgroundColor: viewMode === '3D' ? '#111111' : 'transparent',
                       color: viewMode === '3D' ? '#FFFFFF' : '#66615C',
                       border: 'none',
-                      padding: '4px 10px',
-                      fontSize: '0.68rem',
+                      padding: '3px 8px',
+                      fontSize: '0.64rem',
                       fontWeight: 700,
                       letterSpacing: '0.08em',
                       cursor: 'pointer',
@@ -1004,8 +1004,8 @@ export default function CabinetDesignPage({
               {/* Floating 2D / 3D Switch Button directly next to the pure white canvas */}
               <div style={{
                 position: 'absolute',
-                top: '14px',
-                left: '16px',
+                top: '12px',
+                left: '14px',
                 zIndex: 20,
                 display: 'flex',
                 alignItems: 'center',
@@ -1013,7 +1013,7 @@ export default function CabinetDesignPage({
                 backgroundColor: 'rgba(255, 255, 255, 0.95)',
                 border: '1px solid #D8D4CE',
                 borderRadius: '2px',
-                padding: '3px',
+                padding: '2px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)'
               }}>
                 <button
@@ -1022,19 +1022,19 @@ export default function CabinetDesignPage({
                     backgroundColor: viewMode === '2D' ? '#111111' : 'transparent',
                     color: viewMode === '2D' ? '#FFFFFF' : '#66615C',
                     border: 'none',
-                    padding: '5px 12px',
-                    fontSize: '0.7rem',
+                    padding: '4px 10px',
+                    fontSize: '0.66rem',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
                     cursor: 'pointer',
                     borderRadius: '2px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '5px',
+                    gap: '4px',
                     transition: 'all 0.15s ease'
                   }}
                 >
-                  <Layers size={13} />
+                  <Layers size={12} />
                   <span>2D VIEW</span>
                 </button>
                 <button
@@ -1043,19 +1043,19 @@ export default function CabinetDesignPage({
                     backgroundColor: viewMode === '3D' ? '#111111' : 'transparent',
                     color: viewMode === '3D' ? '#FFFFFF' : '#66615C',
                     border: 'none',
-                    padding: '5px 12px',
-                    fontSize: '0.7rem',
+                    padding: '4px 10px',
+                    fontSize: '0.66rem',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
                     cursor: 'pointer',
                     borderRadius: '2px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '5px',
+                    gap: '4px',
                     transition: 'all 0.15s ease'
                   }}
                 >
-                  <Box size={13} />
+                  <Box size={12} />
                   <span>3D VIEW</span>
                 </button>
               </div>
@@ -1097,10 +1097,10 @@ export default function CabinetDesignPage({
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginTop: '14px',
-              paddingTop: '12px',
+              marginTop: '8px',
+              paddingTop: '8px',
               borderTop: '1px solid #EAE6DF',
-              fontSize: '0.68rem',
+              fontSize: '0.64rem',
               color: '#8E8A84',
               textTransform: 'uppercase',
               letterSpacing: '0.06em'
@@ -1121,27 +1121,27 @@ export default function CabinetDesignPage({
             backgroundColor: '#FFFFFF',
             border: '1px solid #D8D4CE',
             borderRadius: '2px',
-            padding: '24px 18px',
+            padding: '16px 14px',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)',
             display: 'flex',
             flexDirection: 'column',
-            height: '660px'
+            height: '530px'
           }}>
             {/* Panel Heading */}
-            <div style={{ paddingBottom: '12px', borderBottom: '1px solid #EAE6DF', marginBottom: '14px' }}>
-              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.64rem' }}>
+            <div style={{ paddingBottom: '10px', borderBottom: '1px solid #EAE6DF', marginBottom: '10px' }}>
+              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.62rem' }}>
                 JOINERY SPECIFICATION
               </span>
               <h2 style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.4rem',
+                fontSize: '1.25rem',
                 fontWeight: 600,
                 color: '#111111',
                 marginTop: '2px'
               }}>
                 COMPONENTS
               </h2>
-              <span style={{ fontSize: '0.7rem', color: '#8E8A84' }}>
+              <span style={{ fontSize: '0.68rem', color: '#8E8A84' }}>
                 Instant Real-Time 3D Geometry Updates
               </span>
             </div>
@@ -1154,20 +1154,20 @@ export default function CabinetDesignPage({
               paddingRight: '6px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '12px'
             }}>
               {/* 1. CABINET STYLE */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.64rem' }}>
                     01 / CABINET STYLE
                   </span>
-                  <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.66rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentStyle.name}
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '6px' }}>
                   {CABINET_STYLES.map(st => {
                     const isSelected = (plannerState.cabinetStyle || 'slatted') === st.id;
                     return (
@@ -1179,7 +1179,7 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 8px',
+                          padding: '6px 7px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -1196,14 +1196,14 @@ export default function CabinetDesignPage({
                       >
                         <ComponentVisualDiagram type="style" id={st.id} isSelected={isSelected} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {st.name}
                           </div>
-                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.58rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {st.tagline}
                           </span>
                         </div>
-                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
+                        {isSelected && <Check size={11} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1212,16 +1212,16 @@ export default function CabinetDesignPage({
 
               {/* 2. CABINET LAYOUT */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.64rem' }}>
                     02 / LAYOUT
                   </span>
-                  <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.66rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentLayout.name}
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '6px' }}>
                   {CABINET_LAYOUTS.map(ly => {
                     const isSelected = (plannerState.cabinetLayout || '3-door') === ly.id;
                     return (
@@ -1233,7 +1233,7 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 8px',
+                          padding: '6px 7px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -1250,14 +1250,14 @@ export default function CabinetDesignPage({
                       >
                         <ComponentVisualDiagram type="layout" id={ly.id} isSelected={isSelected} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ly.name}
                           </div>
-                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.58rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ly.tagline}
                           </span>
                         </div>
-                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
+                        {isSelected && <Check size={11} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1266,16 +1266,16 @@ export default function CabinetDesignPage({
 
               {/* 3. HARDWARE */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.64rem' }}>
                     03 / HARDWARE
                   </span>
-                  <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.66rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentHardware.name}
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '6px' }}>
                   {HARDWARE_OPTIONS.map(hw => {
                     const isSelected = (plannerState.hardware || 'brushed-brass') === hw.id;
                     return (
@@ -1287,7 +1287,7 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 8px',
+                          padding: '6px 7px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -1303,22 +1303,22 @@ export default function CabinetDesignPage({
                         }}
                       >
                         <div style={{
-                          width: '22px',
-                          height: '22px',
+                          width: '20px',
+                          height: '20px',
                           backgroundColor: hw.color,
                           borderRadius: '50%',
                           border: '1px solid #D8D4CE',
                           flexShrink: 0
                         }} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {hw.name}
                           </div>
-                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.58rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {hw.finish.split(' ')[0]}
                           </span>
                         </div>
-                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
+                        {isSelected && <Check size={11} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1327,16 +1327,16 @@ export default function CabinetDesignPage({
 
               {/* 4. BENCHTOP */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.68rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <span className="label-tech" style={{ color: '#111111', fontSize: '0.64rem' }}>
                     04 / BENCHTOP
                   </span>
-                  <span style={{ fontSize: '0.7rem', color: '#EC202B', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.66rem', color: '#EC202B', fontWeight: 600 }}>
                     {currentBenchtop.name}
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '6px' }}>
                   {COUNTERTOP_OPTIONS.map(ct => {
                     const isSelected = (plannerState.benchtop || 'calacatta') === ct.id;
                     return (
@@ -1348,7 +1348,7 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 8px',
+                          padding: '6px 7px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
@@ -1364,22 +1364,22 @@ export default function CabinetDesignPage({
                         }}
                       >
                         <div style={{
-                          width: '22px',
-                          height: '22px',
+                          width: '20px',
+                          height: '20px',
                           backgroundColor: ct.baseColor,
                           borderRadius: '2px',
                           border: '1px solid #D8D4CE',
                           flexShrink: 0
                         }} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ct.name}
                           </div>
-                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.58rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ct.type.split(' ')[0]}
                           </span>
                         </div>
-                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
+                        {isSelected && <Check size={11} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1396,25 +1396,25 @@ export default function CabinetDesignPage({
           backgroundColor: '#FFFFFF',
           border: '1px solid #D8D4CE',
           borderRadius: '2px',
-          padding: '28px 36px',
+          padding: '20px 24px',
           boxShadow: '0 2px 12px rgba(0, 0, 0, 0.02)',
-          marginBottom: '32px'
+          marginBottom: '24px'
         }}>
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: '20px',
-            paddingBottom: '12px',
+            marginBottom: '14px',
+            paddingBottom: '10px',
             borderBottom: '1px solid #EAE6DF'
           }}>
             <div>
-              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.64rem' }}>
+              <span className="label-tech" style={{ color: '#EC202B', fontSize: '0.62rem' }}>
                 ARCHITECTURAL JOINERY SCHEDULE
               </span>
               <h3 style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: '1.4rem',
+                fontSize: '1.2rem',
                 fontWeight: 600,
                 color: '#111111',
                 marginTop: '2px'
@@ -1422,72 +1422,72 @@ export default function CabinetDesignPage({
                 YOUR SPECIFICATION
               </h3>
             </div>
-            <div style={{ fontSize: '0.72rem', color: '#8E8A84', letterSpacing: '0.06em' }}>
+            <div style={{ fontSize: '0.68rem', color: '#8E8A84', letterSpacing: '0.06em' }}>
               SABRA PROJECTS · ARCHITECTURAL JOINERY
             </div>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '16px'
           }}>
             <div>
-              <span style={{ fontSize: '0.66rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '3px' }}>
                 MATERIAL
               </span>
-              <strong style={{ fontSize: '0.94rem', color: '#111111', display: 'block' }}>
+              <strong style={{ fontSize: '0.86rem', color: '#111111', display: 'block' }}>
                 {selectedMaterial.name}
               </strong>
-              <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+              <span style={{ fontSize: '0.66rem', color: '#66615C' }}>
                 {selectedMaterial.species || selectedMaterial.finish}
               </span>
             </div>
 
             <div>
-              <span style={{ fontSize: '0.66rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '3px' }}>
                 STYLE
               </span>
-              <strong style={{ fontSize: '0.94rem', color: '#111111', display: 'block' }}>
+              <strong style={{ fontSize: '0.86rem', color: '#111111', display: 'block' }}>
                 {currentStyle.name}
               </strong>
-              <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+              <span style={{ fontSize: '0.66rem', color: '#66615C' }}>
                 {currentStyle.tagline}
               </span>
             </div>
 
             <div>
-              <span style={{ fontSize: '0.66rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '3px' }}>
                 LAYOUT
               </span>
-              <strong style={{ fontSize: '0.94rem', color: '#111111', display: 'block' }}>
+              <strong style={{ fontSize: '0.86rem', color: '#111111', display: 'block' }}>
                 {currentLayout.name}
               </strong>
-              <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+              <span style={{ fontSize: '0.66rem', color: '#66615C' }}>
                 {currentLayout.tagline}
               </span>
             </div>
 
             <div>
-              <span style={{ fontSize: '0.66rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '3px' }}>
                 HARDWARE
               </span>
-              <strong style={{ fontSize: '0.94rem', color: '#111111', display: 'block' }}>
+              <strong style={{ fontSize: '0.86rem', color: '#111111', display: 'block' }}>
                 {currentHardware.name}
               </strong>
-              <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+              <span style={{ fontSize: '0.66rem', color: '#66615C' }}>
                 {currentHardware.finish}
               </span>
             </div>
 
             <div>
-              <span style={{ fontSize: '0.66rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '0.62rem', color: '#8E8A84', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', marginBottom: '3px' }}>
                 BENCHTOP
               </span>
-              <strong style={{ fontSize: '0.94rem', color: '#111111', display: 'block' }}>
+              <strong style={{ fontSize: '0.86rem', color: '#111111', display: 'block' }}>
                 {currentBenchtop.name}
               </strong>
-              <span style={{ fontSize: '0.72rem', color: '#66615C' }}>
+              <span style={{ fontSize: '0.66rem', color: '#66615C' }}>
                 {currentBenchtop.type}
               </span>
             </div>
