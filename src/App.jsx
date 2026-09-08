@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import ProjectShowcase from './components/ProjectShowcase';
 import MaterialCatalogue from './components/MaterialCatalogue';
 import CabinetDesignPage from './components/CabinetDesignPage';
 import EstimatorFlow from './components/BudgetEstimator/EstimatorFlow';
 import ConsultationFlow from './components/Consultation/ConsultationFlow';
 import CloseFooter from './components/CloseFooter';
 import Preloader from './components/Preloader';
-import ScrollProgressIndicator from './components/ScrollProgressIndicator';
 
 const INITIAL_STATE = {
   // Material Type & Finish from Material Library
@@ -91,13 +89,7 @@ export default function App() {
         <Preloader onComplete={() => setPreloaderComplete(true)} />
       )}
 
-      {/* 1. Floating Stage / Scroll Progress Indicator (Right Sidebar) */}
-      <ScrollProgressIndicator
-        currentView={currentView}
-        onNavigate={navigateToView}
-      />
-
-      {/* 3. Fixed Architectural Light Header */}
+      {/* 1. Fixed Architectural Light Header */}
       <Navigation
         currentView={currentView}
         onNavigate={navigateToView}
