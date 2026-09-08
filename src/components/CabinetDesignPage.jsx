@@ -946,56 +946,8 @@ export default function CabinetDesignPage({
                 </span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                <div style={{ fontSize: '0.7rem', color: '#66615C', letterSpacing: '0.04em' }}>
-                  <strong style={{ color: '#111111' }}>{selectedMaterial.name}</strong> · {currentStyle.name} · {currentLayout.name}
-                </div>
-
-                {/* [ 2D ] [ 3D ] TOGGLE IN HEADER */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '2px',
-                  backgroundColor: '#F5F3EF',
-                  padding: '3px',
-                  borderRadius: '2px',
-                  border: '1px solid #D8D4CE'
-                }}>
-                  <button
-                    onClick={() => setViewMode('2D')}
-                    style={{
-                      backgroundColor: viewMode === '2D' ? '#111111' : 'transparent',
-                      color: viewMode === '2D' ? '#FFFFFF' : '#66615C',
-                      border: 'none',
-                      padding: '3px 8px',
-                      fontSize: '0.64rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      cursor: 'pointer',
-                      borderRadius: '2px',
-                      transition: 'all 0.15s ease'
-                    }}
-                  >
-                    2D
-                  </button>
-                  <button
-                    onClick={() => setViewMode('3D')}
-                    style={{
-                      backgroundColor: viewMode === '3D' ? '#111111' : 'transparent',
-                      color: viewMode === '3D' ? '#FFFFFF' : '#66615C',
-                      border: 'none',
-                      padding: '3px 8px',
-                      fontSize: '0.64rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      cursor: 'pointer',
-                      borderRadius: '2px',
-                      transition: 'all 0.15s ease'
-                    }}
-                  >
-                    3D
-                  </button>
-                </div>
+              <div style={{ fontSize: '0.7rem', color: '#66615C', letterSpacing: '0.04em' }}>
+                <strong style={{ color: '#111111' }}>{selectedMaterial.name}</strong> · {currentStyle.name} · {currentLayout.name}
               </div>
             </div>
 
