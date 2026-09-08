@@ -8,7 +8,6 @@ import EstimatorFlow from './components/BudgetEstimator/EstimatorFlow';
 import ConsultationFlow from './components/Consultation/ConsultationFlow';
 import CloseFooter from './components/CloseFooter';
 import Preloader from './components/Preloader';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgressIndicator from './components/ScrollProgressIndicator';
 
 const INITIAL_STATE = {
@@ -92,10 +91,7 @@ export default function App() {
         <Preloader onComplete={() => setPreloaderComplete(true)} />
       )}
 
-      {/* 1. Subtle Custom Architectural Cursor (Desktop only) */}
-      <CustomCursor />
-
-      {/* 2. Floating Stage / Scroll Progress Indicator (Right Sidebar) */}
+      {/* 1. Floating Stage / Scroll Progress Indicator (Right Sidebar) */}
       <ScrollProgressIndicator
         currentView={currentView}
         onNavigate={navigateToView}

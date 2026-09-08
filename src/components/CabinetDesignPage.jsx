@@ -609,7 +609,7 @@ export default function CabinetDesignPage({
       minHeight: '100vh',
       padding: '36px 32px 80px 32px'
     }}>
-      <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
         {/* 10 — TOP HEADER & BREADCRUMB */}
         <div style={{
           display: 'flex',
@@ -708,19 +708,19 @@ export default function CabinetDesignPage({
         {/* 02 — NEW THREE-COLUMN CONFIGURATION INTERFACE */}
         <div className="designer-three-column-grid" style={{
           display: 'grid',
-          gridTemplateColumns: '290px minmax(0, 1.45fr) 330px',
+          gridTemplateColumns: '300px minmax(440px, 1.35fr) 400px',
           gap: '22px',
           alignItems: 'start',
           marginBottom: '44px'
         }}>
           <style>{`
-            @media (max-width: 1280px) {
+            @media (max-width: 1400px) {
               .designer-three-column-grid {
-                grid-template-columns: 270px minmax(0, 1.3fr) 310px !important;
+                grid-template-columns: 280px minmax(360px, 1.2fr) 380px !important;
                 gap: 16px !important;
               }
             }
-            @media (max-width: 1040px) {
+            @media (max-width: 1120px) {
               .designer-three-column-grid {
                 grid-template-columns: 1fr !important;
               }
@@ -731,7 +731,7 @@ export default function CabinetDesignPage({
                 min-height: auto !important;
               }
               .designer-scroll-area {
-                max-height: 440px !important;
+                max-height: 480px !important;
               }
             }
           `}</style>
@@ -1121,7 +1121,7 @@ export default function CabinetDesignPage({
             backgroundColor: '#FFFFFF',
             border: '1px solid #D8D4CE',
             borderRadius: '2px',
-            padding: '24px 20px',
+            padding: '24px 18px',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.02)',
             display: 'flex',
             flexDirection: 'column',
@@ -1150,6 +1150,7 @@ export default function CabinetDesignPage({
             <div className="designer-scroll-area" style={{
               flex: 1,
               overflowY: 'auto',
+              overflowX: 'hidden',
               paddingRight: '6px',
               display: 'flex',
               flexDirection: 'column',
@@ -1166,7 +1167,7 @@ export default function CabinetDesignPage({
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   {CABINET_STYLES.map(st => {
                     const isSelected = (plannerState.cabinetStyle || 'slatted') === st.id;
                     return (
@@ -1178,11 +1179,12 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 10px',
+                          padding: '8px 8px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
+                          minWidth: 0,
                           transition: 'all 0.15s ease'
                         }}
                         onMouseEnter={(e) => {
@@ -1194,14 +1196,14 @@ export default function CabinetDesignPage({
                       >
                         <ComponentVisualDiagram type="style" id={st.id} isSelected={isSelected} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.78rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {st.name}
                           </div>
-                          <span style={{ fontSize: '0.62rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {st.tagline}
                           </span>
                         </div>
-                        {isSelected && <Check size={13} color="#EC202B" strokeWidth={3} />}
+                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1219,7 +1221,7 @@ export default function CabinetDesignPage({
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   {CABINET_LAYOUTS.map(ly => {
                     const isSelected = (plannerState.cabinetLayout || '3-door') === ly.id;
                     return (
@@ -1231,11 +1233,12 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 10px',
+                          padding: '8px 8px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
+                          minWidth: 0,
                           transition: 'all 0.15s ease'
                         }}
                         onMouseEnter={(e) => {
@@ -1247,14 +1250,14 @@ export default function CabinetDesignPage({
                       >
                         <ComponentVisualDiagram type="layout" id={ly.id} isSelected={isSelected} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.78rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ly.name}
                           </div>
-                          <span style={{ fontSize: '0.62rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ly.tagline}
                           </span>
                         </div>
-                        {isSelected && <Check size={13} color="#EC202B" strokeWidth={3} />}
+                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1272,7 +1275,7 @@ export default function CabinetDesignPage({
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   {HARDWARE_OPTIONS.map(hw => {
                     const isSelected = (plannerState.hardware || 'brushed-brass') === hw.id;
                     return (
@@ -1284,11 +1287,12 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 10px',
+                          padding: '8px 8px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
+                          minWidth: 0,
                           transition: 'all 0.15s ease'
                         }}
                         onMouseEnter={(e) => {
@@ -1307,14 +1311,14 @@ export default function CabinetDesignPage({
                           flexShrink: 0
                         }} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.78rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {hw.name}
                           </div>
-                          <span style={{ fontSize: '0.62rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {hw.finish.split(' ')[0]}
                           </span>
                         </div>
-                        {isSelected && <Check size={13} color="#EC202B" strokeWidth={3} />}
+                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
@@ -1332,7 +1336,7 @@ export default function CabinetDesignPage({
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   {COUNTERTOP_OPTIONS.map(ct => {
                     const isSelected = (plannerState.benchtop || 'calacatta') === ct.id;
                     return (
@@ -1344,11 +1348,12 @@ export default function CabinetDesignPage({
                           border: '1px solid',
                           borderColor: isSelected ? '#EC202B' : '#EAE6DF',
                           borderRadius: '2px',
-                          padding: '8px 10px',
+                          padding: '8px 8px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
+                          minWidth: 0,
                           transition: 'all 0.15s ease'
                         }}
                         onMouseEnter={(e) => {
@@ -1367,14 +1372,14 @@ export default function CabinetDesignPage({
                           flexShrink: 0
                         }} />
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: '0.78rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <div style={{ fontSize: '0.76rem', fontWeight: 600, color: isSelected ? '#EC202B' : '#111111', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ct.name}
                           </div>
-                          <span style={{ fontSize: '0.62rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ fontSize: '0.6rem', color: '#8E8A84', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {ct.type.split(' ')[0]}
                           </span>
                         </div>
-                        {isSelected && <Check size={13} color="#EC202B" strokeWidth={3} />}
+                        {isSelected && <Check size={12} color="#EC202B" strokeWidth={3} style={{ flexShrink: 0 }} />}
                       </div>
                     );
                   })}
